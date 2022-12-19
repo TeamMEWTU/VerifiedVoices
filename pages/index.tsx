@@ -9,9 +9,6 @@ const Home: NextPage = () => {
       <Head>
         <title>Verified Voices</title>
       </Head>
-
-      <Header />
- 
     </div>
   )
 }
