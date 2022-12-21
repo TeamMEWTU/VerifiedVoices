@@ -87,6 +87,17 @@ type Query {
         """
         configuration: "postgresql_config"
     )
+
+  getSubredditListLimit(limit: Int!): [Subreddit]
+    @dbquery(
+        type: "postgresql"
+        query: """
+        select * from "subreddit" 
+        order by "created_at" desc 
+        limit $1
+        """
+        configuration: "postgresql_config"
+    )  
   " Queries for type 'Comment' "
   getCommentList: [Comment]
     @dbquery(
@@ -232,6 +243,7 @@ type Mutation {
       dml: DELETE
       configuration: "postgresql_config"
     )
+ 
   insertComment(username: String!, post_id: ID!, text: String!): Comment
     @dbquery(
       type: "postgresql"
