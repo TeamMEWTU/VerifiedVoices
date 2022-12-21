@@ -12,24 +12,19 @@ function Header() {
     <div className='flex items-center bg-white px-4 py-3 shadow-sm sticky top-0 z-50 justify-between'>
       <div className='relative h-12 w-20 flex-shrink-0 cursor-pointer'>
         <Link href="/">
-          <Image alt='image' src="/verifiedvoices-invert.png" style={{objectFit: 'cover'}} fill className='object-cover sm:min-w-[120px]' />
+          <Image alt='image' src="/verifiedvoices-invert.png" style={{objectFit: 'cover'}} fill className='sm:min-w-[120px] invisible md:visible' />
+          <Image alt='image' src="/verifiedvoices-logo-invert.png" style={{objectFit: 'scale-down'}} className=' md:invisible' fill />
         </Link>
       </div>
 
-      {/* <div className='flex items-center mx-4 xl:min-w-[300px]'>
-        <HomeIcon className='h-5 w-5'/>
-        <p className='flex-1 ml-2 hidden lg:inline'>Home</p>
-        <ChevronDownIcon className='h-5 w-5'/>
-      </div> */}
-
-      <form className='flex flex-1 items-center space-x-2 border border-gray-200 rounded-md bg-gray-100 px-3 py-1 mx-7 md:max-w-[60%]'>
+      <form className='flex flex-1 items-center space-x-2 border border-gray-200 rounded-md bg-gray-100 px-3 py-1 mx-12 xs:max-w-[60%]'>
         <SearchIcon className='h-6 w-6 text-gray-400' />
         <input type="text" placeholder="Search" className='flex-1 bg-transparent outline-none'/>
         <button type="submit" hidden />
       </form>
 
       <div className='flex'>
-        <div className='flex text-gray-500 space-x-2 items-center mx-5 hidden lg:inline-flex'>
+        <div className='flex text-gray-500 space-x-3 items-center mx-5 hidden lg:inline-flex'>
           <hr className='h-10 border border-gray-100'/>
           <ChatIcon className='icon'/>
           <BellIcon className='icon'/>
@@ -47,7 +42,7 @@ function Header() {
             </div>
             <div className='flex-1 text-xs'>
               <p className='truncate'>{session?.user?.name}</p>
-              <p className='text-gray-400'>1 Karma</p>
+              <p className='text-gray-400'>1 Prestige</p>
             </div>
             <ChevronDownIcon className='h-5 flex-shrink-0 text-gray-400'/>
           </div>

@@ -17,9 +17,9 @@ function Subreddit() {
             </div>
             <div className="py-2">
                 <h1 className="text-3xl font-semibold">
-                  Welcome to the r/{topic} subreddit
+                  Welcome to the {topic} community
                 </h1>
-                <p className="text-sm text-gray-400">r/{topic}</p>
+                <p className="text-sm text-gray-400">v/{topic}</p>
             </div>
           </div>
         </div>
