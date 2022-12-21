@@ -122,10 +122,33 @@ type Query {
   getPostList: [Post]
     @dbquery(
       type: "postgresql"
-      schema: "public"
-      table: "post"
+      query: """
+      select * from "post"
+      order by "post"."created_at" desc
+      """
       configuration: "postgresql_config"
     )
+  getPostListByTopic(topic: String!): [Post]
+  @dbquery(
+    type: "postgresql"
+    query: """
+    select *, "post".id as id from "post"
+    join "subreddit" on "subreddit"."id" = "post"."subreddit_id"
+    where "subreddit"."topic" = $1
+    order by "post"."created_at" desc
+    """
+    configuration: "postgresql_config"
+  )
+  getPostListByPostId(post_id: ID!) :Post
+  @dbquery(
+    type: "postgresql"
+    query: """
+    select * from "post"
+    where "post"."id" = $1
+    """
+    configuration: "postgresql_config"
+  )
+
   getPostPaginatedList(first: Int, after: Int): [Post]
     @dbquery(
       type: "postgresql"
@@ -209,12 +232,7 @@ type Mutation {
       dml: DELETE
       configuration: "postgresql_config"
     )
-  insertComment(
-    username: String
-    post_id: ID
-    text: String
-    created_at: DateTime
-  ): Comment
+  insertComment(username: String!, post_id: ID!, text: String!): Comment
     @dbquery(
       type: "postgresql"
       schema: "public"
