@@ -9,7 +9,7 @@ function Subreddit() {
         query: { topic },
     } = useRouter()
     return (
-      <div className={'h-24 bg-red-400 p-8'}>
+      <div className={'h-24 bg-[#2463A9] p-8'}>
         <div className="-mx-8 mt-19 bg-white">
           <div className="mx-auto flex max-w-5xl items-center space-x-4 pb-3">
             <div className="-mt-5">

@@ -106,10 +106,10 @@ function PostBox({ subreddit}: Props) {
     })
 
     return (
-        <form onSubmit={onSubmit} className='sticky top-16 z-50 rounded-md border border-gray-300 bg-white p-2'>
+        <form onSubmit={onSubmit} className='sticky top-20 z-50 rounded-md border border-gray-300 bg-white p-2'>
             <div className="flex items-center space-x-3">
                 {/*Avatar*/}
-                <Avatar />
+                <Avatar seed="dingleberry"/>
                 <input
                     {...register('postTitle', { required: true })}
                     disabled={!session}
@@ -138,12 +138,12 @@ function PostBox({ subreddit}: Props) {
 
                     {!subreddit && (
                         <div className="flex items-center px-2">
-                        <p className='min-w-[90px]'>Subreddit:</p>
+                        <p className='min-w-[90px]'>Community:</p>
                         <input
                             className='m-2 flex-1 bg-blue-50 outline-none'
                             {...register('subreddit', { required: true })}
                             type="text"
-                            placeholder='i.e reactjs'
+                            placeholder='i.e. "reactjs"'
                         />
                     </div>
                     )}
