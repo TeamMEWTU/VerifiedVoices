@@ -64,11 +64,11 @@ function PostPage() {
   }
   console.log(data)
   return (
-    <div className="mx-auto my-7 max-w-5xl">
+    <div className="mx-auto my-7 max-w-5xl" style={{marginBottom:'4em'}}>
       <Post post={post} />
       <div className="-mt-1 rounded-b-md border border-t-0 border-gray-300 bg-white p-5 pl-16">
         <p className="text-sm">
-          Comment as <span className="text-red-500">{session?.user?.name}</span>
+          Comment as <span className="text-[#2463A9] font-semibold">{session?.user?.name}</span>
         </p>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2">
           <textarea
@@ -83,7 +83,7 @@ function PostPage() {
           <button
             disabled={!session}
             type="submit"
-            className="rounded-full bg-red-500 p-3 font-semibold text-white disabled:bg-gray-200"
+            className="rounded-full bg-[#2463A9] p-3 font-semibold text-white disabled:bg-gray-200"
           >
             Comment
           </button>
@@ -102,7 +102,7 @@ function PostPage() {
             </div>
             <div className="flex flex-col">
               <p className="py-2 text-xs text-gray-400">
-                <span className="font-semibold text-gray-600">{comment.username}</span>-{' '}
+                <span className="font-semibold text-gray-600">{comment.username} </span>-{'  '}  
                 <TimeAgo date={comment.created_at} />
               </p>
               <p>{comment.text}</p>
