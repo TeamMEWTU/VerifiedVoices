@@ -6,4 +6,10 @@
   .icon {
     @apply h-9 w-6 lg:w-9 cursor-pointer rounded-sm lg:p-1 lg:hover:bg-gray-100
   }
+  .voteButtons {
+    @apply h-6 w-6 hover:bg-gray-200 p-1 rounded-md
+  }
+  .postButtons {
+    @apply flex items-center space-x-1 text-sm font-semibold p-2 hover:bg-gray-100 cursor-pointer rounded-sm
+}
 }
