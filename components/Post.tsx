@@ -16,6 +16,8 @@ import { useSession } from 'next-auth/react'
 import { useState, useEffect } from 'react'
 import { useQuery, useMutation } from '@apollo/client'
 import toast from 'react-hot-toast'
+import { GET_ALL_VOTES_BY_POST_ID } from '../graphql/queries'
+import { ADD_VOTE } from '../graphql/mutations'
 type Props = {
   post: Post
 }
@@ -34,20 +36,32 @@ function Post({ post }: Props) {
   })
 
   const upVote = async (isUpvote: boolean) => {
-    useEffect(() => {
-      const votes: Vote[] = data?.getVotesByPostId
-      const vote = votes?.find(
-        (vote) => vote.username == session?.user?.name
-      )?.upvote
-
-      setVote(vote)
-    }, [data])
-
     if (!session) {
       toast("! You'll need to sign in to Vote!")
       return
     }
+    if (vote && isUpvote) return;
+    if (vote === false && !isUpvote) return;
+
+    console.log('voting...', isUpvote)
+
+    await addVote({
+      variables: {
+        post_id: post.id,
+        username: session.user?.name,
+        upvote: isUpvote,
+      },
+    })
   }
+
+  useEffect(() => {
+    const votes: Vote[] = data?.getVotesByPostId
+    const vote = votes?.find(
+      (vote) => vote.username == session?.user?.name
+    )?.upvote
+
+    setVote(vote)
+  }, [data])
 
   if (!post) return (
     <div className="flex w-full items-center justify-center p-10 text-xl">
@@ -59,9 +73,9 @@ function Post({ post }: Props) {
       <div className="flex cursor-pointer rounded-md border border-gray-300 bg-white shadow-sm hover:border hover:border-gray-600">
         {/* Votes */}
         <div className="flex flex-col items-center justify-start space-y-1 rounded-l-md bg-gray-50 p-4 text-gray-400">
-          <ArrowUpIcon onClick={() => upVote(true)} className='voteButtons hover:text-red-400' />
+          <ArrowUpIcon onClick={() => upVote(true)} className={`voteButtons hover:text-green-400 ${vote && 'text-green-400'}`} />
           <p className="text-xs font-bold text-black">0</p>
-          <ArrowDownIcon onClick={() => upVote(false)} className='voteButtons hover:text-blue-400' />
+          <ArrowDownIcon onClick={() => upVote(false)} className={`voteButtons hover:text-red-400 ${vote === false && 'text-red-400'}`} />
         </div>
 
         <div className="p-3 pb-1">
