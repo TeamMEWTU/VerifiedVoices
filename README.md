@@ -1,27 +1,38 @@
-# Next.js + Tailwind CSS Example
+# Verified Voices
+*Real discussions from real professionals*
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+&nbsp;
 
-## Deploy your own
+## What is this?
+Built with professionals in mind, Verified Voices is a platform that allows verified professionals to share their knowledge and expertise with the world. We hope to create a community where users can ask questions and learn from the best in their industry. By integrating our platform with LinkedIn authentication, we are able to help safeguard the integrity of our users while ensuring that they are who they say they are and showcasing the experience they claim to have.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+&nbsp;
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## Current Features
+- Basic LinkedIn authentication
+- Upon logging in, users are greeted with a feed of popular questions from the communities they have joined
+- Users can also view individual communities as well as the posts within them
+- Individuals can create posts that their peers can respond to and learn from within their communities of interest
+- Earn and reward "prestige" for answering questions and being a valuable member of the community
+  
+&nbsp;
 
-## How to use
+## Future Features
+- Full LinkedIn integration, allowing the application to pull in a user's profile information and experience (pending API approval by LinkedIn)
+- View your own profile, the communities you have joined, and the posts you have created or answered
+- View other users' profiles and their contributions to the community
+- See your own "prestige" and the "prestige" of other users, as well as their experience and expertise
+- Create and moderate your own communities
+- Mark posts as "solved" and "unsolved" to help others find the answers they need
+- Filter posts by category, community, time, responses, and more
+  
+&nbsp;
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## Team
+Please feel free to reach out to any of us with questions or comments!
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+- **Ahsan Ali** - [Github](https://github.com/greyali) - [LinkedIn](https://www.linkedin.com/in/greyali/)
+- **Alexander Tu** - [Github](https://github.com/atu816) - [LinkedIn](https://www.linkedin.com/in/atu816/)
+- **Erik Stynchula** - [Github](https://github.com/EStynch) - [LinkedIn](https://www.linkedin.com/in/erikstynchula)
+- **Rabea Ahmad** - [Github](https://github.com/RabeaAhmad3) - [LinkedIn](https://www.linkedin.com/in/rabea-ahmad/)
+- **Stephan Chiorean** - [Github](https://github.com/stephan-chiorean) - [LinkedIn](https://www.linkedin.com/in/stephan-chiorean-2b6961139/)
