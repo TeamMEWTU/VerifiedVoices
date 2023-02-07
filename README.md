@@ -9,7 +9,7 @@ Built with professionals in mind, Verified Voices is a platform that allows veri
 &nbsp;
 
 ## Current Features
-- Basic LinkedIn authentication
+- LinkedIn authentication isomg NextAuth.js
 - Upon logging in, users are greeted with a feed of popular questions from the communities they have joined
 - Users can also view individual communities as well as the posts within them
 - Individuals can create posts that their peers can respond to and learn from within their communities of interest
